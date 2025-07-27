@@ -2,9 +2,34 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>title</title>
+    <title>Chess Game in Javascript</title>
 </head>
 <body>
-    
+    <div id="game"></div>
+    <script>
+        const game = document.getElementById('game');
+        for (let row = 8; row >= 1; row--) {
+            const prefix = document.createElement('div');
+            prefix.className = 'cellprefix';
+            prefix.textContent = row;
+            game.appendChild(prefix);
+            for (let col = 1; col <= 8; col++) {
+                const cell = document.createElement('div');
+                cell.className = 'gamecell' + ((row + col) % 2 === 0 ? ' grey' : '');
+                cell.id = `${col}_${row}`;
+                game.appendChild(cell);
+            }
+        }
+    </script>
+    <div class="cellprefix"></div>
+    <div class="cellprefix">A</div> 
+    <div class="cellprefix">B</div>
+    <div class="cellprefix">C</div>
+    <div class="cellprefix">D</div>
+    <div class="cellprefix">E</div>
+    <div class="cellprefix">F</div>
+    <div class="cellprefix">G</div>
+    <div class="cellprefix">H</div>
+    <div class="cellprefix"> It's White's Turn! </div>
 </body>
 </html>
